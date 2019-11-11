@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/organisms', function () {
-    return view('organisms');
-});
-Route::get('/molecules', function () {
-    return view('molecules');
-});
-Route::get('/atoms', function () {
-    return view('atoms');
-});
+Route::get('/organisms', 'DesignGuideController@showOrganisms');
+Route::get('/atoms', 'DesignGuideController@showAtoms');
+Route::get('/molecules', 'DesignGuideController@showMolecules');

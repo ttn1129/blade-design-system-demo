@@ -66,4 +66,5 @@
     <body>
         @yield('content')
     </body>
+    @stack('css')
 </html>
