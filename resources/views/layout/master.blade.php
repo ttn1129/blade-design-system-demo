@@ -67,4 +67,7 @@
         @yield('content')
     </body>
     @stack('css')
+    @stack('js')
+
+    {{-- <script src="{{  }}"></script> --}}
 </html>

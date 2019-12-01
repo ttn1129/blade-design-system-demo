@@ -1,8 +1,10 @@
-<div class="normal__block">{{ $slot }}</div>
+<div class="bg__dark__block">{{ $slot }}</div>
 
 @pushonce('css')
     <style>
-        .normal__block{
+        .bg__dark__block{
+            max-width: 90%;
+            background: dimgray;
             padding:1rem;
             display: flex;
             justify-content: space-evenly;

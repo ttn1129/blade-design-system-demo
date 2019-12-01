@@ -14,3 +14,4 @@
 Route::get('/organisms', 'DesignGuideController@showOrganisms');
 Route::get('/atoms', 'DesignGuideController@showAtoms');
 Route::get('/molecules', 'DesignGuideController@showMolecules');
+Route::get('/278', 'DesignGuideController@show278_ナビゲーションのデザインを変えたい_flexbox版');
