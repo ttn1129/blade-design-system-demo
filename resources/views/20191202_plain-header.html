@@ -6,20 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"><title>Document</title>
 </head>
-<body class='open'>
+<body>
     <header>
         <div class="header--container">
-            <a href="#"><h1>20191202_plain-header</h1></a>
+            <a href="#"><h2>20191202_plain-header</h2></a>
             <a href="#" id="nav-toggle"><div>三</div></a>
         </div>
-        <div class="nav--container">
-            <nav>
+        <div class="nav--container open">
+            <nav class="nav--container--nav">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">WORKS</a></li>
-                    <li><a href="#">CONTACT</a></li>
-
+                    <li>
+                        <a id="nav--HOME" class="nav--container--nav--ul--a" href="#">HOME</a>
+                        <div id="nav--HOME--children--container" class="nav--children--container">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Strategy</a></li>
+                                <li><a href="#">b1</a></li>
+                            <ul>
+                        </div>
+                    </li>
+                    <li><a class="nav--container--nav--ul--a" href="#">ABOUT</a></li>
+                    <li><a class="nav--container--nav--ul--a" href="#">WORKS</a></li>
+                    <li><a class="nav--container--nav--ul--a" href="#">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,7 +37,6 @@
     body{
         font-family: sans-serif;
         margin:0;
-
         padding: 1rem;
         background: rgba(0,0,0,0.1);
     }
@@ -41,32 +48,62 @@
     .nav--container{
         display: none;
     }
-    .open .nav--container{
+    .nav--container.open{
         display: block;
     }
-    .nav--container nav ul{
+    .nav--container--nav ul{
         width: 100%;
         display: flex;
         justify-content: space-around; /*子要素を左右に間をあけて配置してくれる*/
         align-items: center; /*子要素の上下の行揃えの設定：中央*/
         list-style: none;
     }
-    .nav--container nav ul li{
+    .nav--container--nav ul li{
         /*flex: 1 1 25%; 20191204追加→flexされたliの領域が広がる*/
         flex: 1 1 calc(100% / 4); /*20191206 li要素を4個にした時は25% にしないといけない */
         /* flex: 1 1 calc(100% / 6); li要素を6個にした時は16% にしないといけない */
         /* flex: 1 1 25%; 20191206 li要素を4個にした時は25% にしないといけない*/
         /* flex: 1 1 16%; 20191206 li要素を6個にした時は16% にしないといけない*/
-        margin:1rem;
-        background: rgba(0,0,0,0.12);
+        text-align: center;
+        position: relative;
+    }
+    /*↓↓↓ 20191207 navigation のデフォルトのリンクの色を緑にする+hover時に反応するようにする変更 */
+    a.nav--container--nav--ul--a:hover {
+        border-bottom: 8px solid #7bae34;
+        color: #7bae34;
+    }
+    /*↑↑↑ 20191207 navigation のデフォルトのリンクの色を緑にする+hover時に反応するようにする変更 */
+
+    .nav--container--nav--ul--a{
+        width: 100%;
+        /* background: rgba(0,0,0,0.12); */
         /*20191206 boobooks のナビゲーションの下の部分の装飾の実装*/
         border-bottom: 8px solid #ffffff;
-        text-decoration: none;
         text-align: center;
         line-height: 150%;
         color: #ffffff;
+        margin:1rem;
         /*20191206 boobooks のナビゲーションの下の部分の装飾の実装*/
     }
+    a.nav--container--nav--ul--a{
+        /* width: 100%; */
+        text-decoration:  none;
+        /* ↓↓↓ 20191207 リンクを親要素いっぱいに広げる方法 */
+        top: 0;left:0;width: 90%;height: 100%;display: block;
+        /* ↑↑↑ 20191207 リンクを親要素いっぱいに広げる方法 */
+
+    }
+    /*↓↓↓ 20191207 navigationの子要素を追加 */
+    .nav--children--container{
+        display: none;
+    }
+    .nav--children--container.open{
+        position: absolute;
+        right: 0;
+        display: block;
+    }
+    /*↑↑↑ 20191207 navigationの子要素を追加 */
+
 </style>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
@@ -75,9 +112,22 @@
         $(function() {
             $('#nav-toggle').on('click', function() {
                 event.preventDefault();
-                $('body').toggleClass('open');
+                $('.nav--container').toggleClass('open');
             });
         });
     })(jQuery);
 </script>
+<!-- ↓↓↓ 20191207 navigationの子要素を追加 -->
+<script type="text/javascript">
+    (function($) {
+        $(function() {
+            $('#nav--HOME').on('click', function() {
+                event.preventDefault();
+                $('#nav--HOME--children--container').toggleClass('open');
+            });
+        });
+    })(jQuery);
+</script>
+<!-- ↑↑↑ 20191207 navigationの子要素を追加 -->
+
 </html>

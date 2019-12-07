@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"><title>Document</title>
+</head>
+<body style="margin: 2rem;">
+        <!-- ↓↓↓20191207 リンクを親要素いっぱいに広げる方法 -->
+        <!-- /* →https://qiita.com/yusaku1106/items/0190e3b35d239d1e9545 */
+             /* →→これを参考にli に position:relative を追加し */
+             /* →→→ top: 0;left:0;width: 90%;height: 100%;display: block;をaに追加 */
+             /* →→→→ （position:absolute は必要なかったため aタグから削除） */
+             /* →→→→→→ aタグがliの中で広がるようになる */ -->
+        <ul style="position: relative; display: flex; text-align: center; justify-content: space-around; list-style: none;">
+            <li style="flex: 1 1 30%;position: relative;"><a style="background: chartreuse; top: 0;left:0;width: 90%;height: 100%;display: block;" href="#">a</a></li>
+            <li style="flex: 1 1 30%;position: relative;"><a style="background: chartreuse; top: 0;left:0;width: 90%;height: 100%;display: block; " href="#">a</a></li>
+            <li style="flex: 1 1 30%;position: relative;"><a style="background: chartreuse; top: 0;left:0;width: 90%;height: 100%;display: block;" href="#">a</a></li>
+        </ul>
+        <!-- <ul style="position: relative; display: flex; text-align: center; justify-content: space-around; list-style: none;">
+            <li style="position: relative; flex: 1 1 50%;"><a style="background: chartreuse; top: 0;left:0;position: absolute;width: 100%;height: 100%;display: block;" href="#">a</a></li>
+            <li style="position: relative; flex: 1 1 50%;"><a style="background: chartreuse; top: 0;left:0;position: absolute;width: 100%;height: 100%;display: block;" href="#">a</a></li>
+        </ul> -->
+        <!-- ↑↑↑20191207 リンクを親要素いっぱいに広げる方法 -->
+</body>
+
+</html>
