@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery.colorbox/1.4.33/example1/colorbox.min.css" />
+    <title>Document</title>
+</head>
+<body style="margin: 3rem;">
+    <div>
+        <h2 class="block-title-accordion">
+            <span class="block-title-accordion-title">aaa</span>
+            <span class="block-title-accordion-tags-container open">
+                <label class="tag">tagA</label>
+                <label class="tag">tagB</label>
+            </span>
+        </h2>
+        <div class="collapse block-title-accordion-area">
+            aaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    <style>
+        .block-title-accordion{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2b5c9c;
+            color: #ffffff;
+        }
+        .block-title-accordion-title{
+            margin-left: 10px;
+        }
+        .block-title-accordion-tags-container{
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2b5c9c;
+            margin-right: 10px;
+        }
+        .tag{
+            margin-left: 2px;
+            background-color: chocolate;
+            padding: 0.2rem;
+        }
+        .block-title-accordion-tags-container.open::after{
+            content: '+';
+        }
+        .block-title-accordion-tags-container.close::after{
+            content: '-';
+        }
+        .block-title-accordion-area{
+
+        }
+        /* .block-title-accordion-mark.open{
+            content: '+';
+        }
+
+        .block-title-accordion-mark.close{
+            content: '-';
+        } */
+    </style>
+    <script>
+        $(function () {
+            $(".block-title-accordion").on('click',function(){
+                // $(this).closest(".block-title-accordion-area").css("display", 'block')
+                $(this).parent().find('.collapse').collapse("toggle");
+            });
+        })
+    </script>
+</body>
+</html>

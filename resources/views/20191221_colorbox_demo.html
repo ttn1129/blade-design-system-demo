@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery.colorbox/1.4.33/example1/colorbox.min.css" />
+    <title>Document</title>
+</head>
+<body style="margin:4rem">
+
+    <div class="btn btn-light ">
+        <a href="#color--box" class="show--color--box">ColorBox表示</a>
+    </div>
+
+    <div style="display: none;">
+        <div id="color--box">
+            ColorBox中身
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.6.4/jquery.colorbox-min.js" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $(".show--color--box").colorbox({
+                inline: true,
+                maxWidth: "350px",
+                opacity: 0.4,
+                fixed: true,
+                width: "90%"
+            });
+        })
+    </script>
+</body>
+</html>
