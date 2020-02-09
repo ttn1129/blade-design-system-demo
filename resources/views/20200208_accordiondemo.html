@@ -9,15 +9,15 @@
     <title>Document</title>
 </head>
 <body style="margin: 3rem;">
-    <div>
+    <div class="block-title-accordion-container open">
         <h2 class="block-title-accordion">
             <span class="block-title-accordion-title">aaa</span>
-            <span class="block-title-accordion-tags-container open">
+            <span class="block-title-accordion-tags-container">
                 <label class="tag">tagA</label>
                 <label class="tag">tagB</label>
             </span>
         </h2>
-        <div class="collapse block-title-accordion-area">
+        <div class="collapse block-title-accordion-area show">
             aaaaaaaaaaaaaaaaaaaaaaaaaa
         </div>
     </div>
@@ -47,11 +47,11 @@
             background-color: chocolate;
             padding: 0.2rem;
         }
-        .block-title-accordion-tags-container.open::after{
-            content: '+';
-        }
-        .block-title-accordion-tags-container.close::after{
+        .block-title-accordion-container.open .block-title-accordion-tags-container::after{
             content: '-';
+        }
+        .block-title-accordion-container .block-title-accordion-tags-container::after{
+            content: '+';
         }
         .block-title-accordion-area{
 
@@ -68,7 +68,12 @@
         $(function () {
             $(".block-title-accordion").on('click',function(){
                 // $(this).closest(".block-title-accordion-area").css("display", 'block')
-                $(this).parent().find('.collapse').collapse("toggle");
+                $(this).parent(".block-title-accordion-container").find('.collapse').collapse("toggle");
+                if($(this).parent(".block-title-accordion-container").hasClass('open')){
+                    $(this).parent(".block-title-accordion-container").removeClass("open");
+                }else{
+                    $(this).parent(".block-title-accordion-container").addClass("open");
+                }
             });
         })
     </script>
